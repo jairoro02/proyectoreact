@@ -21,9 +21,16 @@ const episodioIndividual = async (id, state) => {
   state(peticion.data)
 }
 
-const prueba = async (id,state) =>{
+const personajesCapitulo = async (id,state) =>{
   const peticion = await axios.get(`https://rickandmortyapi.com/api/episode/${id}`)
   state(peticion.data.characters)
 }
 
-export {todosPersonajes, personajeIndividual, todosEpisodios, episodioIndividual,prueba}
+const personajeCapitulo = async (url,state) =>{
+  console.log(url)
+  const peticion = await axios.get(`${url}`)
+  state(peticion.data)
+}
+
+
+export {todosPersonajes, personajeIndividual, todosEpisodios, episodioIndividual,personajesCapitulo,personajeCapitulo}

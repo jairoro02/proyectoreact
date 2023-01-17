@@ -1,17 +1,25 @@
 import React, {useEffect, useState} from "react";
 import { useParams } from "react-router-dom";
-import { episodioIndividual, prueba} from "../funciones";
+import { episodioIndividual, personajesCapitulo, personajeCapitulo} from "../funciones";
 
 const Capitulo = () => {
 
     const [episodio, setEpisodio] = useState(null)
     const [personajes, setPersonajes] = useState(null)
+    const [personaje, setPersonaje] = useState(null)
 
     const params = useParams()
     useEffect(()=>{
         episodioIndividual(params.id, setEpisodio)
-        prueba(params.id, setPersonajes)
+        personajesCapitulo(params.id, setPersonajes)
+        
+        {personajes != null ? (
+            console.log("funciona")
+        ):(console.log("f"))}
+
     },[])
+
+    console.log(personajes)
 
     return (
         <>
@@ -19,8 +27,8 @@ const Capitulo = () => {
             <div>
                 <h2>Nombre: {episodio.name}</h2>
                 <h2>Id: {episodio.id}</h2>
-                <a href={personajes[5]}>{personajes[5].name}</a>
-                <img src={episodio.image} alt="" />
+                {/* <a href={personajes[5]}>{personaje.id}</a> */}
+                
             </div>
             
         ): ('no hay episodio')}
