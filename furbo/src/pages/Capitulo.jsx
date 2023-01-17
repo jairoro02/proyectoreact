@@ -9,17 +9,13 @@ const Capitulo = () => {
     const [personaje, setPersonaje] = useState(null)
 
     const params = useParams()
-    useEffect(()=>{
-        episodioIndividual(params.id, setEpisodio)
-        personajesCapitulo(params.id, setPersonajes)
-        
-        {personajes != null ? (
-            console.log("funciona")
-        ):(console.log("f"))}
-
+    useEffect(async()=>{
+        await episodioIndividual(params.id, setEpisodio)
+        await personajesCapitulo(params.id, setPersonajes)
+        await  personajeCapitulo(personajes[1], setPersonaje)
     },[])
 
-    console.log(personajes)
+    console.log(personaje)
 
     return (
         <>
