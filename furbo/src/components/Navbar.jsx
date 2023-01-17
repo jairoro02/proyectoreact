@@ -1,26 +1,22 @@
 import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Navbar from '../components/Navbar'
+import { Link, NavLink } from 'react-router-dom'
 
-const NavBar = () => {
+const Navbar = () => {
   return (
     <nav className='navbar navbar-dark bg-dark'>
       <div className='container'>
         <NavLink to='/' className='btn btn-outline-primary'>
-          Equipos
+          Capítulos
         </NavLink>
-        <NavLink to='/jugadores' className='btn btn-outline-primary'>
-          Jugadores
+        <NavLink to='/personajes' className='btn btn-outline-primary'>
+          Personajes
         </NavLink>
         <NavLink to='/login' className='btn btn-outline-primary'>
-          Inicio Sesión
-        </NavLink>
-        <NavLink to='/resgister' className='btn btn-outline-primary'>
-          Registro
+          Inicio de sesión
         </NavLink>
       </div>
     </nav>
   )
 }
 
-export default NavBar
+export default Navbar
